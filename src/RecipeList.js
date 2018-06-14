@@ -36,20 +36,22 @@ export default class RecipeList extends React.Component {
 
 
   render() {
+
+    const filteredList = _.map(this.state.recipes, (recipe, index) => <div className="List-group-item" style={{ backgroundColor: (index % 2 === 0 ? "lightgrey" : "white"), color: 'blue'}}>{recipe.title}</div>)
+
     return (
       <div>
-        <form className="Search-input">
+        <form className="Search-input-container">
           <FormControl
+            className="Search-input"
             type="text"
             placeholder="Search for..."
             onChange={this.filterList}
             />
-          <Button>Search</Button>
+          <Button className="Button">Search</Button>
         </form>
         <div className="List-group">
-          {
-            _.map(this.state.recipes, (recipe, index) => <div className="List-group-item" style={{ backgroundColor: (index % 2 === 0 ? "lightgrey" : "white")}}>{recipe.title}</div>)
-          }
+          {filteredList}
         </div>
       </div>
     )

@@ -1,5 +1,6 @@
-.List-group {
-  flex: 1;
+.Button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .List-group-item {
@@ -8,8 +9,13 @@
   padding: 10px;
 }
 
-.Search-input {
-  flex: auto;
+.Search-input-container {
+  display: flex;
   flex-direction: row;
   margin: 30px;
+}
+
+.Search-input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
