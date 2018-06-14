@@ -17,7 +17,7 @@ export default class RecipeList extends Component {
 
   filterList = (event) => {
     const userSearchInput = event.target.value.toLowerCase()
-    axios.get(`${endpoint}?q=${userSearchInput}`).then(res => {
+    axios.get(`${endpoint}?q=${userSearchInput}&p=20`).then(res => {
       const recipes = res.data;
       this.setState({ recipes });
     })
