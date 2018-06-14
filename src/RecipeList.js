@@ -8,30 +8,15 @@ import './RecipeList.css';
 const endpoint = `http://www.recipepuppy.com/api/`
 export default class RecipeList extends React.Component {
   state = {
-    recipes: [
-      {
-        title: 'banana'
-      },
-      {
-        title: 'apple'
-      }
-    ]
-  }
-
-  componentDidMount() {
-    // axios.get(endpoint)
-    //   .then(res => {
-    //     const recipes = res.data;
-    //     this.setState({ recipes });
-    //   })
+    recipes: []
   }
 
   filterList = (event) => {
     const input = event.target.value.toLowerCase()
-    // axios.get(`${endpoint}q=${input}`).then(res => {
-    //   const recipes = res.data;
-    //   this.setState({ recipes });
-    // })
+    axios.get(`${endpoint}q=${input}`).then(res => {
+      const recipes = res.data;
+      this.setState({ recipes });
+    })
   }
 
 
