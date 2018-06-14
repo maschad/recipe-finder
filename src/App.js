@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
-import RecipeList  from './RecipeList';
+// External Dependencies
 
+import React, { Component } from 'react';
+
+// Internal Dependencies
+import RecipeList  from './components/RecipeList.component';
+
+// Styles
 import './App.css';
 
 class App extends Component {

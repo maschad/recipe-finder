@@ -1,19 +1,23 @@
-import React from 'react';
+// External Dependencies
+
+import React, { Component } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 import { Button, FormControl } from 'react-bootstrap';
 
+// Style
 import './RecipeList.css';
 
 const endpoint = `http://www.recipepuppy.com/api/`
-export default class RecipeList extends React.Component {
+
+export default class RecipeList extends Component {
   state = {
     recipes: []
   }
 
   filterList = (event) => {
-    const input = event.target.value.toLowerCase()
-    axios.get(`${endpoint}?q=${input}`).then(res => {
+    const userSearchInput = event.target.value.toLowerCase()
+    axios.get(`${endpoint}?q=${userSearchInput}`).then(res => {
       const recipes = res.data;
       this.setState({ recipes });
     })
@@ -22,7 +26,7 @@ export default class RecipeList extends React.Component {
 
   render() {
 
-    const filteredList = _.map(this.state.recipes, (recipe, index) => <div className="List-group-item" style={{ backgroundColor: (index % 2 === 0 ? "lightgrey" : "white"), color: 'blue'}}>{recipe.title}</div>)
+    const filteredList = _.map(this.state.recipes, (recipe, index) => <div className="List-group-item" style={{ backgroundColor: (index % 2 === 0 ? "lightgrey" : "white"), color: "blue"}}>{recipe.title}</div>)
 
     return (
       <div>
