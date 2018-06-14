@@ -1,0 +1,15 @@
+.List-group {
+  flex: 1;
+}
+
+.List-group-item {
+  margin: 30px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.Search-input {
+  flex: auto;
+  flex-direction: row;
+  margin: 30px;
+}
