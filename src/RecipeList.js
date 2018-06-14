@@ -13,7 +13,7 @@ export default class RecipeList extends React.Component {
 
   filterList = (event) => {
     const input = event.target.value.toLowerCase()
-    axios.get(`${endpoint}q=${input}`).then(res => {
+    axios.get(`${endpoint}?q=${input}`).then(res => {
       const recipes = res.data;
       this.setState({ recipes });
     })
